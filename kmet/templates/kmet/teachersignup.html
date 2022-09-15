@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+{% extends 'kmet/homebase.html' %}
+{%load static %}
+{% load widget_tweaks %}
+
+<style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #7abecc !important;
+    }
+    .user_card {
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: 100;
+      background: #74cfbf;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 45px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+
+    .form_container {
+      margin-top: 20px;
+    }
+
+    #form-title{
+      color: #fff;
+      
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #33ccff !important;
+      color: white !important;
+       size: : 350px;
+    }
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 10px !important;
+    }
+    .login_container {
+      padding: 0 2rem;
+    }
+    .input-group-text {
+      background: #f7ba5b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    #messages{
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+ {%block content%}
+
+ <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+
+
+          <h3 id="form-title">LOGIN</h3>
+        </div>
+        <div class="d-flex justify-content-center form_container">
+      <!--- signup page for teacher by admin(chriphone waka)  ---------->
+  <form method="post">
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Apply For Teacher Job </p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form1.first_name class="form-control" placeholder="First Name" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form1.username class="form-control" placeholder="Username" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.mobile class="form-control" placeholder="Contact" %}
+              </div>
+
+            </div><br/>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form1.last_name class="form-control" placeholder="Last Name" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form1.password class="form-control" type="password" placeholder="Password" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.salary class="form-control" placeholder="Salary (ksh)" %}
+              </div><br/>
+
+            </div>
+          </div><br/>
+          <button type="submit" class="btnSubmit">Apply</button>
+          <div class="text-center">Already have an account? <a href="teacherlogin">Login here</a></div>
+        </div><br/>
+      </div>
+    </div>
+
+  </form>
+        </div>
+
+        
+    
+        
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <br><br><br>
+
+
+  {%endblock%}
+
+</body>
+ {% include "kmet/footer.html" %}
+</html>

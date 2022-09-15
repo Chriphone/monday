@@ -1,0 +1,152 @@
+{% extends 'kmet/adminbase.html' %}
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>SMS - </title>
+  <style type="text/css">
+    body {
+      color: #aa082e;
+      background-color: #b6bde7;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #343a40, #607d8b);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #4caf50;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <!--- signup page for teacher by admin(sumit)  ---------->
+  <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+       
+        <div class="form-content">
+            <div class="note">
+          <h1>New Admission To School</h1>
+        </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form1.first_name class="form-control" placeholder="First Name" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form1.username class="form-control" placeholder="Username" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.cl class="form-control" placeholder="Class" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.mobile class="form-control" placeholder="Contact" %}
+              </div><br/>
+
+            </div><br/>
+            <div class="col-md-6">
+              <div class="form-group">
+                {% render_field form1.last_name class="form-control" placeholder="Last Name" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form1.password class="form-control" type="password" placeholder="Password" %}
+              </div><br/>
+                <div class="form-group">
+                {% render_field form2.TEL_NO class="form-control" type="TEL NO" placeholder="TEL NO:" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.TEL_NO1 class="form-control" type="TEL_NO1" placeholder="ALTERNATIVE TEL NO:" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.ID_NUMBER class="form-control" type="ID_NUMBER" placeholder="ID NUMBER" %}
+              </div><br/>
+               <div class="form-group">
+                {% render_field form2.COURSE class="form-control" type="COURSE" placeholder="COURSE" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.LEVEL class="form-control" type="LEVEL" placeholder="LEVEL" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.ACADEMIC_YEAR class="form-control" type="ACADEMIC_YEAR" placeholder="ACADEMIC YEAR" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.RESIDENCE class="form-control" type="RESIDENCE" placeholder="RESIDENCE" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.roll class="form-control" placeholder="Roll" %}
+              </div><br/>
+              <div class="form-group">
+                {% render_field form2.fee class="form-control" placeholder="Fee" %}
+              </div><br/>
+
+            </div>
+          </div><br/>
+          <button type="submit" class="btnSubmit">Take Admission</button><br/>
+          <div class="text-center">Already have an account? <a href="studentlogin">Login here</a></div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+
+
+
+
+
+
+  {% include "kmet/footer.html" %}
+</body>
+
+</html>
+
+
+
+
+{% endblock content %}

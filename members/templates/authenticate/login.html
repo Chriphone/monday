@@ -1,0 +1,31 @@
+{%extends 'kmet/base.html'%}
+{%load static %}
+{%block content%}
+
+
+
+
+<h1>Login.....</h1><br/>
+
+
+	<form action="" method=POST>
+		{%csrf_token%}
+		<div class="mb-3">
+	<label for="exampleinputEmail"class="form-label">Username</label>
+	<input type="text"class="form-control"name="Username"aria-describedby="email help">
+	<div id="emailhelp"class="form-text"></div></div>
+	<div class="mb-3">
+		<label for="input password"class="form-label">Password</label>
+		<input type="password" class="form-control"name="password">
+	</div>
+    
+		<input type="submit" value="submit" class="btn btn-primary" >
+	</form>
+	
+
+
+<br/><br/>
+
+{%endblock%}
+
+	

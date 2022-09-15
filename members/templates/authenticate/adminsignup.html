@@ -1,0 +1,37 @@
+{%extends 'kmet/base.html'%}
+{%load static %}
+{%block content%}<br/>
+<h1>waka</h1>
+<div class="container">
+  <form method="POST">
+      <form method="post">
+    {% csrf_token %}
+    <div class="container register-form">
+      <div class="form">
+        <div class="note">
+          <p>Add New Admin To School</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                {% for field in form %}
+    <div class="form-group row">
+  <label for="id_{{field.name}}"class="col-6 col-form-label">{{field.label}}</label>
+  <div class="col-10"><!--this ensure that all element are in the same line-->
+  {{field}}</div></div>
+  {% endfor %}
+             
+          <button type="submit" class="btnSubmit">Submit</button>
+          <div class="text-center">Already have an account? <a href="adminlogin">Login here</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+          <div class="d-flex justify-content-center links">
+            Don't have an account? <a href="#" class="ml-2">Sign Up</a>
+
+
+  </form></div>
+{%endblock%}

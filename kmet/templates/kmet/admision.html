@@ -1,0 +1,29 @@
+{%extends 'kmet/homebase.html'%}
+{%block content%}
+<center>
+  <h1>exammination </h1>
+</center>
+{%endblock%}
+  <!DOCTYPE html>
+{% load static %}
+
+<body>
+ 
+
+
+  {%for slide in sliderdata%}
+
+  <div class="col-md-4 col-xl-3 order-card">
+        <div class="card bg-c-yellow order-card"> <strong>SCHOOL UPDATE</strong>
+          <div class="card-block">
+            <h6 class="m-b-20">Posted on {{slide.date}}</h6>
+            <h2 class="text-right">{{slide.message}}</h2>
+            <p><span style="font-size: 20px;">By :{{slide.by}}</span></p>
+          </div>
+        </div>
+      </div>
+{%endfor%}
+  
+
+  
+    {% include "kmet/footer.html" %}
